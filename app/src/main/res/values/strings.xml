@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TED Talk</string>
+    <string name="action_settings">Settings</string>
+    <string name="title"><b>TED</b> Talks</string>
+    <string name="top_show">lionel messi</string>
+    <string name="bottom_show">You are the best palyer in the world!!!</string>
+    <string name="time">13:38</string>
+
+</resources>
