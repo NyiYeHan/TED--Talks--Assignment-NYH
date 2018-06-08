@@ -1,5 +1,6 @@
-package com.padcmyanmar.tedtalk;
+package com.padcmyanmar.tedtalk.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,9 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.padcmyanmar.tedtalk.R;
 import com.padcmyanmar.tedtalk.adapters.TedAdapter;
+import com.padcmyanmar.tedtalk.delegate.NewsDelegateTedTalk;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
 
     TedAdapter tedAdapter;
 
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         RecyclerView rv = findViewById(R.id.rv_mess);
-        tedAdapter = new TedAdapter();
+        tedAdapter = new TedAdapter(this);
 
         rv.setAdapter(tedAdapter);
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
@@ -73,5 +76,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onTapView() {
+        Intent intent = new Intent(getApplicationContext(),NewsDetailActivityTedTalk.class);
+        startActivity(intent);
     }
 }

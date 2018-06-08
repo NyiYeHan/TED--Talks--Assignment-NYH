@@ -11,6 +11,7 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -26,6 +27,12 @@
     </style>
     <style name="floatingTheme">
         <item name="android:background">@color/fcolor</item>
+    </style>
+
+    <style name="yarggyi">
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">47dp</item>
     </style>
 
 </resources>

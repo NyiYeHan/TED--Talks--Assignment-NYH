@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
 
 
@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/tv_bottom"
 
-                android:text="@string/top_show"
+                android:text="@string/top_show_name"
                 android:textColor="#FFFFFF"
                 android:textSize="@dimen/text_small" />
 

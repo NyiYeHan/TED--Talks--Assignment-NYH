@@ -2,8 +2,23 @@
     <string name="app_name">TED Talk</string>
     <string name="action_settings">Settings</string>
     <string name="title"><b>TED</b> Talks</string>
-    <string name="top_show">lionel messi</string>
-    <string name="bottom_show">You are the best palyer in the world!!!</string>
+    <string name="top_show_name">lionel messi</string>
+    <string name="bottom_show_name">You are the best palyer <b>in the world!!!</b> </string>
+    <string name="time1">13:38 |</string>
     <string name="time">13:38</string>
+    <string name="listen">Listen</string>
+    <string name="content_show_name">FC Barcelona are
+        often criticised for getting their stars to publicly speak about players who are linked with the club, but that has not stopped superstar Lionel Messi, who has once again discussed the Blaugrana\'s
+        potential signing of Antoine Griezmann.Messi, who has previously said he would welcome Griezmann at the Camp Nou, has again insisted the 27-year-old is one of the best in the business and that he would suit the Catalans.<i>TED2018, Flimed Apr 2018</i>
+    </string>
+    <string name="content_show_name2">FC Barcelona are
+        often criticised for getting their stars to publicly speak about players who are linked with the club, but that has not stopped superstar Lionel Messi, who has once again discussed the Blaugrana\'s
+        potential signing of Antoine Griezmann.Messi, who has previously said he would welcome Griezmann at the Camp Nou.
+    </string>
+    <string name="ted_link">TED Talks are free thanks to support from</string>
+    <string name="football">Football player , Model</string>
+    <string name="player">player in the world</string>
+    <string name="best">You are the best</string>
+
 
 </resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium_2">
+
+
+        <ImageView
+            android:id="@+id/iv_icon_top"
+            android:layout_width="170dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/blackbackground"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/iv_icon_top"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:text="@string/time"
+            android:textSize="@dimen/text_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:textColor="@color/custextcolor" />
+
+
+        <TextView
+            android:id="@+id/tv_top_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_toRightOf="@+id/iv_icon_top"
+            android:text="@string/top_show_name"
+            android:textColor="@color/primary_text" />
+
+        <TextView
+            android:id="@+id/tv_bottom2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_top_name2"
+            android:layout_below="@+id/tv_top_name2"
+            android:text="@string/best"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/text_small"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_bottom3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_top_name2"
+            android:layout_below="@+id/tv_bottom2"
+            android:text="@string/player"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/text_small"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more_vert_black_24dp"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

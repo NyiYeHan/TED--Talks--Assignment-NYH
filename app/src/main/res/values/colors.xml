@@ -11,5 +11,8 @@
     <color name="fcolor">#0000ff</color>
     <color name="red_custom">#d20808</color>
 
+    <color name="custextcolor">#FFFFFF</color>
+    <color name="line_color">#009688</color>
+
 </resources>
 
