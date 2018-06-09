@@ -27,7 +27,8 @@
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin">
+                app:layout_collapseMode="pin"
+                >
 
             </android.support.v7.widget.Toolbar>
 
@@ -42,7 +43,8 @@
         app:backgroundTintMode="src_over"
         app:backgroundTint="@color/primary_dark"
         app:layout_anchor="@+id/appbar"
-        app:layout_anchorGravity="bottom|right" />
+        app:layout_anchorGravity="bottom|right"
+        android:layout_marginRight="@dimen/margin_medium_2"/>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -250,7 +252,7 @@
                 android:id="@+id/rv_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/cus_margin"
+                android:layout_marginBottom="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium">
 
             </android.support.v7.widget.RecyclerView>
