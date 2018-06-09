@@ -250,7 +250,7 @@
                 android:id="@+id/rv_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:layout_marginBottom="@dimen/cus_margin"
                 android:layout_marginTop="@dimen/margin_medium">
 
             </android.support.v7.widget.RecyclerView>

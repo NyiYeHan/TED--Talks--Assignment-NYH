@@ -35,4 +35,5 @@
     <!-- App specific image-->
     <dimen name="publication_logo_size">120dp</dimen>
     <dimen name="link_img">40dp</dimen>
+    <dimen name="cus_margin">80dp</dimen>
 </resources>
