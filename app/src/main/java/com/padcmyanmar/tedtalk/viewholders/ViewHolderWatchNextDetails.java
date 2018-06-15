@@ -3,8 +3,8 @@ package com.padcmyanmar.tedtalk.viewholders;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-public class ViewHolderDetails extends RecyclerView.ViewHolder {
-    public ViewHolderDetails(View itemView) {
+public class ViewHolderWatchNextDetails extends RecyclerView.ViewHolder {
+    public ViewHolderWatchNextDetails(View itemView) {
         super(itemView);
     }
 }

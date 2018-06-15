@@ -15,35 +15,26 @@ import android.widget.TextView;
 
 import com.padcmyanmar.tedtalk.R;
 import com.padcmyanmar.tedtalk.adapters.TedAdapter;
+import com.padcmyanmar.tedtalk.data.model.TedTalksNewsModel;
 import com.padcmyanmar.tedtalk.delegate.NewsDelegateTedTalk;
 
 public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
 
-    TedAdapter tedAdapter;
+    private TedAdapter tedAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         TextView tvBottom = findViewById(R.id.tv_bottom);
         //getResources().getDimension(R.dimen.margin_card_medium);
-
-
         RecyclerView rv = findViewById(R.id.rv_mess);
         tedAdapter = new TedAdapter(this);
-
         rv.setAdapter(tedAdapter);
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +42,8 @@ public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
                         .setAction("Action", null).show();
             }
         });
+
+        TedTalksNewsModel.getObj().loadTedNewsList();
 
 
     }
@@ -80,7 +73,7 @@ public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
 
     @Override
     public void onTapView() {
-        Intent intent = new Intent(getApplicationContext(),NewsDetailActivityTedTalk.class);
+        Intent intent = new Intent(getApplicationContext(), NewsDetailActivityTedTalk.class);
         startActivity(intent);
     }
 }

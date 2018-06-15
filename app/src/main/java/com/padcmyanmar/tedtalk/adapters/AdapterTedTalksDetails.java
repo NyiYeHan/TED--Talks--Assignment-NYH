@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 
 import com.padcmyanmar.tedtalk.R;
 
-import com.padcmyanmar.tedtalk.viewholders.ViewHolderDetails;
+import com.padcmyanmar.tedtalk.viewholders.ViewHolderWatchNextDetails;
 
-public class AdapterDetails extends RecyclerView.Adapter {
+public class AdapterTedTalksDetails extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.activity_watch_next_details, parent, false);
-        return new ViewHolderDetails(view);
+        return new ViewHolderWatchNextDetails(view);
     }
 
     @Override

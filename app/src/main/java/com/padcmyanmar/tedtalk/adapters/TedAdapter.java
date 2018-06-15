@@ -14,16 +14,17 @@ import com.padcmyanmar.tedtalk.viewholders.ViewHolder;
 public class TedAdapter extends RecyclerView.Adapter {
     private NewsDelegateTedTalk newsDelegateTedTalk;
 
-    public TedAdapter(NewsDelegateTedTalk newsDelegateTedTalk){
+    public TedAdapter(NewsDelegateTedTalk newsDelegateTedTalk) {
         this.newsDelegateTedTalk = newsDelegateTedTalk;
     }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-      LayoutInflater layoutInflater =  LayoutInflater.from(parent.getContext());//layout inflater obj
-       View view = layoutInflater.inflate(R.layout.activity_list,parent,false);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());//layout inflater obj
+        View view = layoutInflater.inflate(R.layout.activity_list, parent, false);
 
-        return new ViewHolder(view , newsDelegateTedTalk);
+        return new ViewHolder(view, newsDelegateTedTalk);
     }
 
     @Override
