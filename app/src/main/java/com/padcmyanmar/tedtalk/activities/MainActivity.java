@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +16,13 @@ import android.widget.TextView;
 import com.padcmyanmar.tedtalk.R;
 import com.padcmyanmar.tedtalk.adapters.TedAdapter;
 import com.padcmyanmar.tedtalk.data.model.TedTalksNewsModel;
+import com.padcmyanmar.tedtalk.data.vo.TalksVo;
 import com.padcmyanmar.tedtalk.delegate.NewsDelegateTedTalk;
+import com.padcmyanmar.tedtalk.events.SuccessGetTedTedEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
 
@@ -34,6 +40,8 @@ public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
         tedAdapter = new TedAdapter(this);
         rv.setAdapter(tedAdapter);
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +55,19 @@ public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
 
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -72,8 +93,17 @@ public class MainActivity extends BaseActivity implements NewsDelegateTedTalk {
     }
 
     @Override
-    public void onTapView() {
+    public void onTapView(TalksVo talksVo) {
         Intent intent = new Intent(getApplicationContext(), NewsDetailActivityTedTalk.class);
+        intent.putExtra("talk_id",talksVo.getTedId());
         startActivity(intent);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onSuccessGetNews(SuccessGetTedTedEvent event){
+        Log.d("onSuccessGetNews","talks vo list : "+event.getTalksVos());
+        tedAdapter.setTedNewsList(event.getTalksVos());
+
+
     }
 }

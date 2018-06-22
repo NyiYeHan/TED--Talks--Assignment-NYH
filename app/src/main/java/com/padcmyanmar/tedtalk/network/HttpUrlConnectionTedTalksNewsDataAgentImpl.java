@@ -3,10 +3,15 @@ package com.padcmyanmar.tedtalk.network;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.padcmyanmar.tedtalk.events.ApiErrorEvent;
+import com.padcmyanmar.tedtalk.events.SuccessGetTedTedEvent;
+import com.padcmyanmar.tedtalk.network.responses.GetTedTalksResponse;
 import com.padcmyanmar.tedtalk.utils.TedTalksNewsConstant;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -44,7 +49,6 @@ public class HttpUrlConnectionTedTalksNewsDataAgentImpl implements TedTalksNewsD
                 try {
                     url = new URL(TedTalksNewsConstant.API_BASE_ROOT + TedTalksNewsConstant.GET_TED_TALKS); //1.
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //2.
-                    connection.setRequestMethod("POST"); //3.
 
                     connection.setReadTimeout(15 * 1000); //4. ms
 
@@ -53,6 +57,7 @@ public class HttpUrlConnectionTedTalksNewsDataAgentImpl implements TedTalksNewsD
 
                     List<NameValuePair> params = new ArrayList<>(); //6.
                     params.add(new BasicNameValuePair(TedTalksNewsConstant.PARAM_ACCESS_TOKEN, accessToken));
+                    params.add(new BasicNameValuePair(TedTalksNewsConstant.PARAM_PAGE, String.valueOf(page)));
                     //write the parameters from NameValuePair list into connection obj.
                     OutputStream outputStream = connection.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
@@ -93,9 +98,22 @@ public class HttpUrlConnectionTedTalksNewsDataAgentImpl implements TedTalksNewsD
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
+                Gson gson = new Gson();
+                GetTedTalksResponse getTedTalksResponse = gson.fromJson(s, GetTedTalksResponse.class);
+                Log.d("onPostExecute", "Ted News size : " + getTedTalksResponse
+                        .getTalksVos().size());
+
+                if (getTedTalksResponse.isResponseOk()) {
+                    SuccessGetTedTedEvent event = new SuccessGetTedTedEvent(getTedTalksResponse.getTalksVos());
+                    EventBus.getDefault().post(event);
+                } else {
+                    ApiErrorEvent event = new ApiErrorEvent(getTedTalksResponse.getMessage());
+                    EventBus.getDefault().post(event);
+                }
             }
         }.execute();
     }
+
 
     private String getQuery(List<NameValuePair> params) throws UnsupportedEncodingException {
         StringBuilder result = new StringBuilder();

@@ -18,6 +18,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
+                android:id="@+id/iv_details_top_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
@@ -76,6 +77,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_speaker_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_small"
@@ -84,6 +86,7 @@
                 android:textSize="@dimen/text_small" />
 
             <TextView
+                android:id="@+id/tv_details_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_small"
@@ -115,8 +118,7 @@
                     android:foreground="@drawable/ripple"
                     android:text="@string/listen"
                     android:textAllCaps="false"
-                    android:textSize="@dimen/text_small"
-                    />
+                    android:textSize="@dimen/text_small" />
 
             </LinearLayout>
 
@@ -152,7 +154,7 @@
             </LinearLayout>
 
             <TextView
-
+                android:id="@+id/tv_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_medium_2"
@@ -208,6 +210,7 @@
                     android:id="@+id/cimv_messi"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginRight="@dimen/margin_small"
                     android:scaleType="centerCrop"
                     android:src="@drawable/lionelface3"
                     app:civ_border_color="@color/primary_text" />
@@ -264,7 +267,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:layout_marginBottom="@dimen/custom_margin"
+                android:layout_marginBottom="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium">
 
             </android.support.v7.widget.RecyclerView>

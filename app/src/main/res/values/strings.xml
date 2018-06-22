@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">TED Talk</string>
     <string name="action_settings">Settings</string>
     <string name="title"><b>TED</b> Talks</string>
@@ -18,7 +18,9 @@
     <string name="ted_link">TED Talks are free thanks to support from</string>
     <string name="football">Football player , Model</string>
     <string name="player">player in the world</string>
-    <string name="best">You are the best</string>
+    <string name="best">You are the best player in the world</string>
+
+    <string name="time_format"><xliff:g id="tv_time">%1$s</xliff:g> : <xliff:g id="tv_time">%2$s</xliff:g></string>
 
 
 </resources>
